@@ -6,181 +6,46 @@
 	<title>Servicios Podologicos - Inicio</title>
 	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
-	<style type="text/css">
-		html {height: 100%; width: 100%;}
-		body{
-			padding: 0;
-			margin: 0;
-		}
-
-
-		.option {
-			text-decoration: none;
-			font-family: 'Courgette', cursive;
-			color: black;
-			font-size: 3em;
-		}
-		
-		.option:hover {text-shadow: 2px 2px 4px rgba(0,0,0,0.4);}
-
-		.lista {
-			display: inline-block;
-			padding-left: 2em;
-			padding-right: 2em;
-			margin-left: 1em;
-		}
-		
-		.lista:hover {
-			-webkit-box-shadow: 1px 5px 11px 2px rgba(0,0,0,0.75);
-			border-radius: 5px;
-		}
-		
-		.menu {
-			max-width: 80%;
-			margin: auto;
-			padding-top: 2em;
-			transform: translateY(0%) rotateX(0deg);
-			transition: all 0.5s;
-		}
-		
-		.menu-fijo{
-			position: fixed;
-			z-index:1000;
-			top:0;
-			max-width:1000px;
-			width:100%;
-			padding-left: 10%;
-			padding-right: 10%;
-			background-color: #CD2439;
-			border-style: solid;
-			border-width: 0px 2px 2px 0px;
-			transform: translateY(0%) rotateX(360deg);
-			transition: all 0.5s;
-		}
-		
-		#imagen {
-			background: url('./img/podologia.jpg');
-			background-position: center bottom;
-			position: relative;
-			overflow: hidden;
-			background-size: cover;
-			background-position: center center;
-			z-index: 1;
-			
-		}
-		
-		h1 {
-			color: rgb(250, 210, 208);
-			text-align: center;
-			margin-top: 15%;
-			font-weight: normal;
-			font-size: 6em;
-			font-family: 'Lobster', cursive;
-			visibility: hidden;
-			opacity: 0;
-			transition: opacity 1s cubic-bezier(0.13, 0.42, 0.77, 0.67) 1s;
-			 text-shadow: 2px 3px 6px rgba(0,0,0,0.4);
-		}
-		
-		#contenido {
-			background-color: rgb(253, 239, 221);
-			width: 100%;
-			margin-top: -22%;
-		}
-		
-		.pie {
-			background-color: black;
-			color: white;
-			height: 20%;
-			padding-top: 1em;
-			font-size: 2em;
-			font-weight: bold;
-			font-family: 'Courgette', cursive;
-		}
-		
-		/*h1:hover { text-shadow: 2px 2px 4px rgba(0,0,0,0.4);}*/
-	</style>
-	<script type="text/javascript">
-	/*
-		Función que hace los ajustes necesarios para que se muestre una animación css3 y la imagen de cabecera
-		se auste al tamaño inicial de la ventana.
-	*/
-		function ajuste () {
-			altura = window.innerHeight; //Obtenemos la altura
-			imagen = document.getElementById('imagen'); //Obtenemos la caja imagen
-			imagen.style.height = altura+"px"; //Asignamos a altura inicial
-			
-			h1 = document.getElementById('msginit'); //Obtenemos el título con id 'msginit' 
-			//ingresamos al atributo style del título y le cambimos su visibilidad y opacidad
-			h1.style.visibility = "visible";
-			h1.style.opacity = "1";
-			
-			window.addEventListener("resize",resize); //Agregamos un evento para ajustar la altura de la imagen según se redimensione la pagina
-			window.addEventListener("scroll",scroll); //Agregamos un evento para cuando se mueve el scroll
-		}
-
-		function resize () {
-			otraAltura = window.innerHeight; //Obtenemos la altura del navegador
-			imagen = document.getElementById('imagen'); //obtenemos la imagen
-			imagen.style.height = altura+"px"; //le asignamos la altura del navegador a la imagen
-		}
-		
-		function scroll(){
-			var tamanoImagen = imagen.style.getPropertyValue('height'); //Obtenemos la altura predefinida en un inicio
-			if(window.scrollY >= parseInt(tamanoImagen)){ //comparamos si el scroll ha dejado atrás a la imagen
-				console.log('llegaste al final de la imagen');
-				
-				document.getElementById('m').className = "menu-fijo"; //Cambiamos la clase del elemento html con id m
-				
-				arreglo = document.getElementsByClassName('option'); //obtenemos cada elemento qe tenga la clase option
-				for(i = 0; i < arreglo.length; i++){ arreglo[i].style.color = "white"; } //a cada uno de los elemtno obtenidos le cambiamos el color de fuente
-			}else{
-				document.getElementById('m').className = "menu"; //En caso de que no se haya superado la imagen se vuelve a la clase inicial del elemento cuyo id es m
-				
-				arreglo = document.getElementsByClassName('option'); //volvemos a obtener los elementos con clase option
-				for(i = 0; i < arreglo.length; i++){ arreglo[i].style.color = "black"; } //cambiamos el color de fuente de cada uno de ellos a negro
-			}
-		}
-
-	</script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body onload="ajuste()">
 	<div id="container">
 		<div id="imagen">
-				<h1 id="msginit">Podología Isabel</h1>
+			<h1 id="msginit">Podología Isabel</h1>
 		</div>
 		<div class="menu" id="m">
 			<div class="lista"><a href="#" class="option">Inicio</a></div>
 			<div class="lista"><a href="#" class="option">Servicios</a></div>
 			<div class="lista"><a href="#" class="option">Consejos</a></div>
-			<div class="lista"><a href="inicioSesion.html" class="option">Contacto</a></div>
+			<div class="lista"><a href="#" class="option">Contacto</a></div>
 		</div>
 	</div>
 	<div id="contenido">
-	<div class="codrops-header">
-                    <h1>Animated Background Headers <span>Examples for creative website headers</span></h1>
-                    <nav class="codrops-demos">
-                        <a href="index.html">Demo 1</a>
-                        <a class="current-demo" href="index2.html">Demo 2</a>
-                        <a href="index3.html">Demo 3</a>
-                        <a href="index4.html">Demo 4</a>
-                    </nav>
-                </div>
-            <!-- Related demos -->
-            <section class="related">
-                <p>If you enjoyed this demo you might also like:</p>
-                <a href="http://tympanus.net/Development/HeaderEffects/">
-                    <img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/07/HeaderEffects-300x162.jpg">
-                    <h3>On Scroll Header Effects</h3>
-                </a>
-                <a href="http://tympanus.net/Development/ArticleIntroEffects/">
-                    <img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/05/ArticleIntroEffects-300x162.png">
-                    <h3>Inspiration for Article Intro Effects</h3>
-                </a>
-            </section>
+		<div class="codrops-header">
+			<h1>Animated Background Headers <span>Examples for creative website headers</span></h1>
+			<nav class="codrops-demos">
+				<a href="index.html">Demo 1</a>
+				<a class="current-demo" href="index2.html">Demo 2</a>
+				<a href="index3.html">Demo 3</a>
+				<a href="index4.html">Demo 4</a>
+			</nav>
+		</div>
+		<!-- Related demos -->
+		<section class="related">
+			<p>If you enjoyed this demo you might also like:</p>
+			<a href="http://tympanus.net/Development/HeaderEffects/">
+				<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/07/HeaderEffects-300x162.jpg">
+				<h3>On Scroll Header Effects</h3>
+			</a>
+			<a href="http://tympanus.net/Development/ArticleIntroEffects/">
+				<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/05/ArticleIntroEffects-300x162.png">
+				<h3>Inspiration for Article Intro Effects</h3>
+			</a>
+		</section>
 	</div>
 	<footer class="pie">
-		<center><p>Sitio desarrollado por <a href="https://www.facebook.com/raul.gu.mo" style="text-decoration:none; color:white;"> Rulo GM</a></p></center>
+		<center><p>Sitio desarrollado por <a href="https://www.facebook.com/SoyRuloGM" style="text-decoration:none; color:white;"> Rulo GM</a></p></center>
 	</footer>
 </body>
 </html>
