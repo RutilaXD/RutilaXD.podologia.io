@@ -5,9 +5,15 @@
 	*/
 	function ajuste () {
 	var altura = window.innerHeight; //Obtenemos la altura
-	console.log("heeeeey! "+altura);
+	var ancho = window.innerWidth;
+
+	if(ancho<1000){
+		altura = altura*0.7;
+	}
+	
 	imagen = document.getElementById('imagen'); //Obtenemos la caja imagen
 	imagen.style.height = altura+"px"; //Asignamos a altura inicial
+	imagen.style.width = ancho+"px"; //Asignamos a altura inicial
 	
 	h1 = document.getElementById('msginit'); //Obtenemos el título con id 'msginit' 
 	//ingresamos al atributo style del título y le cambimos su visibilidad y opacidad
@@ -19,12 +25,14 @@
 }
 function resize () {
 	var otraAltura = window.innerHeight; //Obtenemos la altura del navegador
-	var ancho = window.innerWidth;
-	console.log("ancho "+ancho);
-	console.log("hoolaaa "+otraAltura);
-	if(ancho<1000){console.log("asdasdasd");otraAltura= otraAltura*0.8;}
+	var otroAncho = window.innerWidth;
+	
+	if(otroAncho<1000){
+		otraAltura = otraAltura*0.7;
+	}
 	imagen = document.getElementById('imagen'); //obtenemos la imagen
 	imagen.style.height = otraAltura+"px"; //le asignamos la altura del navegador a la imagen
+	imagen.style.width = otroAncho+"px"; //le asignamos la altura del navegador a la imagen
 }
 
 function scroll(){
