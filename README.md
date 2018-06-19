@@ -1,2 +1,4 @@
 # RutilaXD.podologia.io
-Aquí se irá desarrollando la página web de un negocio de podología
+Sitio web de un negocio de servicios de podología en Iztacalco
+
+__Enlace al demo: https://rutilaxd.github.io/rutilaxd.podologia.io/__
